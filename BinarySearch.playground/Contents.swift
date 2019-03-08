@@ -1,7 +1,12 @@
 import UIKit
 
 // BinarySearch searching algorithm
-// Splits the data in half and compares the middle value with the key value we're looking for, if the key is less than the middle value we call the function recursively with a new array with only the left half. This process is repeated until the we get the key, otherwise, it returns false. Has the complexity of O(logn) due to its smaller array in each function call.
+// Splits the data in half and compares the middle value
+// with the key value we're looking for, if the key is less than
+// the middle value we call the function recursively with a new
+// array with only the left half. This process is repeated until
+// the we get the key, otherwise, it returns false. Has the
+// complexity of O(logn) due to its smaller array in each function call.
 
 var data: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 var key: Int = 16

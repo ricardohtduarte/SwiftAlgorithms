@@ -21,7 +21,13 @@ func checkSum(array: [Int], sum: Int) -> Bool {
 print("Brute Force: \(checkSum(array: array, sum: sum))")
 
 
-//Pointers: start with two pointers, one at the begin and the other at the end. Sum the two values. If the sum is bigger than the sum variable value descend the second pointer until we get the correct value of the sum, or if the sum is lower than correct value of the sum, if it's lower, raise the first pointer. If the pointers cross, the sum doesn't exist in the array. THE ARRAY MUST BE SORTED. The complexity for this algorithm is O(n) which is a big improvement over the brute force approach
+// Pointers: start with two pointers, one at the begin and the other at the end.
+// Sum the two values. If the sum is bigger than the sum variable value descend the
+// second pointer until we get the correct value of the sum, or if the sum
+// is lower than correct value of the sum, if it's lower, raise the first pointer.
+// If the pointers cross, the sum doesn't exist in the array. THE ARRAY MUST BE SORTED.
+// The complexity for this algorithm is O(n)
+// which is a big improvement over the brute force approach
 
 func checkSumWithPointers(array: [Int], sum: Int) -> Bool {
     var firstValue: Int = 0
@@ -42,7 +48,7 @@ func checkSumWithPointers(array: [Int], sum: Int) -> Bool {
 
 print("Pointers: \(checkSumWithPointers(array: array, sum: sum))")
 
-//Pointers but recursively, because reasons
+// Pointers but recursively, because reasons
 
 func checkSumWithPointersRecursively(array: [Int], sum: Int) -> Bool {
     var firstIndex = 0
