@@ -1,6 +1,6 @@
 import UIKit
 
-var word: String = "hello world"
+var word: String = "Hello World"
 
 extension String {
     subscript (i: Int) -> Character {
@@ -21,7 +21,7 @@ func invertString(word: String) -> String {
 
 func invertStringHelper(word: String, firstIndex: Int, lastIndex: Int) -> String {
     
-    guard firstIndex < lastIndex, !word.isEmpty else {
+    guard firstIndex <= lastIndex, !word.isEmpty else {
         return word
     }
     
@@ -30,5 +30,21 @@ func invertStringHelper(word: String, firstIndex: Int, lastIndex: Int) -> String
     return invertStringHelper(word: finalInvertedWord, firstIndex: firstIndex+1, lastIndex: lastIndex-1)
 }
 
-print(invertString(word: word))
+func invertStringIteratively(word: String) -> String {
+    guard word != "" else {
+        return "Error: empty parameter"
+    }
+    var stringArray = Array(word)
+    var firstIndex = 0
+    var lastIndex = stringArray.count - 1
+    while firstIndex < lastIndex {
+        let firstElem = stringArray[firstIndex]
+        stringArray[firstIndex] = stringArray[lastIndex]
+        stringArray[lastIndex] = firstElem
+        firstIndex += 1
+        lastIndex -= 1
+    }
+    return String(stringArray)
+}
 
+print(invertStringIteratively(word: word))
